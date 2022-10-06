@@ -1,6 +1,11 @@
 #Project Specific
 .DS_Store
 .vsconfig
+CarGameMod_DefaultProject/
+Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset*
+WwiseUnityIntegration_*_Src.zip
+
+
 
 # This .gitignore file should be placed at the root of your Unity project directory
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
