@@ -6678,7 +6678,7 @@ MonoBehaviour:
   reverse: 0
   nitrusValue: 0
   nitrusFlag: 0
-  carPrice: 500000
+  carPrice: 50000
   carName: BMW 1980
 --- !u!114 &7837695500219272407
 MonoBehaviour:
@@ -6763,11 +6763,11 @@ MonoBehaviour:
   - {fileID: 2100000, guid: fc127e09bf6a2a242b1accb8594f701d, type: 2}
   - {fileID: 2100000, guid: 95a400d1a5fb7ac4fbf20adb8c2b04a5, type: 2}
   P_colorUpgrade: 000000000000000000000000
-  wheelUpgrade: 0
+  wheelUpgrade: 1
   I_wheelUpgrade: 0
   L_wheelUpgrade: []
   P_wheelUpgrade: 
-  handlingUpgrade: 0
+  handlingUpgrade: 1
   I_handlingUpgrade: 0
   P_handlingUpgrade: 000000007b000000f3e00100f3e00100
 --- !u!82 &8952095242928637465
@@ -14989,14 +14989,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2736725691770413286, guid: d958382a0f0100c41828f087b0bb64d7,
         type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2736725691770413286, guid: d958382a0f0100c41828f087b0bb64d7,
-        type: 3}
       propertyPath: InitialModule.startSpeed.scalar
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2736725691770413286, guid: d958382a0f0100c41828f087b0bb64d7,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2776344145517615273, guid: d958382a0f0100c41828f087b0bb64d7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -15017,6 +15017,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 3df83bc4e1cdc26468a5819125327ec7, type: 2}
+    - target: {fileID: 5313137607919080636, guid: d958382a0f0100c41828f087b0bb64d7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5313137607919080636, guid: d958382a0f0100c41828f087b0bb64d7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15034,6 +15039,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5313137607919080636, guid: d958382a0f0100c41828f087b0bb64d7,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5313137607919080636, guid: d958382a0f0100c41828f087b0bb64d7,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -15045,16 +15055,6 @@ PrefabInstance:
     - target: {fileID: 5313137607919080636, guid: d958382a0f0100c41828f087b0bb64d7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5313137607919080636, guid: d958382a0f0100c41828f087b0bb64d7,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5313137607919080636, guid: d958382a0f0100c41828f087b0bb64d7,
-        type: 3}
-      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5313137607919080636, guid: d958382a0f0100c41828f087b0bb64d7,
@@ -15079,13 +15079,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5559755997102820228, guid: d958382a0f0100c41828f087b0bb64d7,
         type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 0.5
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5559755997102820228, guid: d958382a0f0100c41828f087b0bb64d7,
         type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 1
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6364357576914690516, guid: d958382a0f0100c41828f087b0bb64d7,
         type: 3}
@@ -15104,13 +15104,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6570750418155592091, guid: d958382a0f0100c41828f087b0bb64d7,
         type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 0.5
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6570750418155592091, guid: d958382a0f0100c41828f087b0bb64d7,
         type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 1
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9201846915408205124, guid: d958382a0f0100c41828f087b0bb64d7,
         type: 3}
@@ -15119,31 +15119,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9201846915408205124, guid: d958382a0f0100c41828f087b0bb64d7,
         type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9201846915408205124, guid: d958382a0f0100c41828f087b0bb64d7,
-        type: 3}
       propertyPath: InitialModule.startSpeed.scalar
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9201846915408205124, guid: d958382a0f0100c41828f087b0bb64d7,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d958382a0f0100c41828f087b0bb64d7, type: 3}
---- !u!198 &5029554605322818189 stripped
+--- !u!198 &7012360742526885458 stripped
 ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 6570750418155592091, guid: d958382a0f0100c41828f087b0bb64d7,
-    type: 3}
-  m_PrefabInstance: {fileID: 2225745739602692886}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &6295857955930808234 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5313137607919080636, guid: d958382a0f0100c41828f087b0bb64d7,
-    type: 3}
-  m_PrefabInstance: {fileID: 2225745739602692886}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &6038015840152109202 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5559755997102820228, guid: d958382a0f0100c41828f087b0bb64d7,
+  m_CorrespondingSourceObject: {fileID: 9201846915408205124, guid: d958382a0f0100c41828f087b0bb64d7,
     type: 3}
   m_PrefabInstance: {fileID: 2225745739602692886}
   m_PrefabAsset: {fileID: 0}
@@ -15153,9 +15141,21 @@ ParticleSystem:
     type: 3}
   m_PrefabInstance: {fileID: 2225745739602692886}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &7012360742526885458 stripped
+--- !u!198 &6038015840152109202 stripped
 ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 9201846915408205124, guid: d958382a0f0100c41828f087b0bb64d7,
+  m_CorrespondingSourceObject: {fileID: 5559755997102820228, guid: d958382a0f0100c41828f087b0bb64d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2225745739602692886}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &5029554605322818189 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6570750418155592091, guid: d958382a0f0100c41828f087b0bb64d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2225745739602692886}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6295857955930808234 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5313137607919080636, guid: d958382a0f0100c41828f087b0bb64d7,
     type: 3}
   m_PrefabInstance: {fileID: 2225745739602692886}
   m_PrefabAsset: {fileID: 0}

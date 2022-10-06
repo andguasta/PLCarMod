@@ -164,5 +164,9 @@ public class awakeManager : MonoBehaviour
         SceneManager.LoadScene("ComunityMap");
     }
 
+    public void loadEmptyMap()
+    {
+        SceneManager.LoadScene("EmptyMap");
+    }
 
 }
