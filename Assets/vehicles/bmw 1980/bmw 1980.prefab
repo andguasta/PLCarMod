@@ -6746,7 +6746,7 @@ MonoBehaviour:
   I_engineUpgrade: 0
   P_engineUpgrade: 0000000000000000000000000000000000000000
   spoilerUpgrade: 1
-  I_spoilerUpgrade: 1
+  I_spoilerUpgrade: 0
   L_spoilerUpgrade:
   - {fileID: 9062183516772139582}
   - {fileID: 4015329403088604351}
@@ -7482,7 +7482,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3199477461618148932
 Transform:
   m_ObjectHideFlags: 0
@@ -14835,7 +14835,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &906976126534603491
 Transform:
   m_ObjectHideFlags: 0
