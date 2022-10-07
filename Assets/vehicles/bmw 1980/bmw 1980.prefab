@@ -6540,6 +6540,9 @@ GameObject:
   - component: {fileID: 3990281597347014629}
   - component: {fileID: 1779992248954430971}
   - component: {fileID: 8952095242928637465}
+  - component: {fileID: 6507669362931929437}
+  - component: {fileID: 2010956465871785847}
+  - component: {fileID: 2354085271671190588}
   m_Layer: 0
   m_Name: bmw 1980
   m_TagString: Player
@@ -6621,10 +6624,10 @@ MonoBehaviour:
   drive: 2
   test: 0
   handBrakeFrictionMultiplier: 2
-  maxRPM: 8500
-  minRPM: 5000
+  maxRPM: 7500
+  minRPM: 4000
   gears:
-  - 5
+  - 4
   - 2.8
   - 2.2
   - 1.6
@@ -6643,29 +6646,20 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 4.3402834
       value: 51.33716
-      inSlope: 0.111855164
-      outSlope: 0.111855164
+      inSlope: 0.062752254
+      outSlope: 0.062752254
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.112477586
-    - serializedVersion: 3
-      time: 6979.9917
-      value: 421.98407
-      inSlope: -0.005127997
-      outSlope: -0.005127997
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.0882489
-      outWeight: 0.550979
+      outWeight: 0.016650284
     - serializedVersion: 3
       time: 8605.235
       value: 209.70056
-      inSlope: -0.25033534
-      outSlope: -0.25033534
+      inSlope: -0
+      outSlope: -0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.2511919
+      inWeight: 0.04799214
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -6742,32 +6736,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controllerRef: {fileID: 2962088815592287997}
-  engineUpgrade: 1
+  engineUpgrade: 0
   I_engineUpgrade: 0
   P_engineUpgrade: 0000000000000000000000000000000000000000
-  spoilerUpgrade: 1
+  spoilerUpgrade: 0
   I_spoilerUpgrade: 0
   L_spoilerUpgrade:
   - {fileID: 9062183516772139582}
   - {fileID: 4015329403088604351}
   - {fileID: 7454608288177881401}
   P_spoilerUpgrade: 0000000000000000b3b55607
-  nitrusUpgrade: 1
+  nitrusUpgrade: 0
   I_nitrusUpgrade: 0
   P_nitrusUpgrade: 00000000f3e00100f3e00100
   car: {fileID: 4975652847170142413}
-  colorUpgrade: 1
+  colorUpgrade: 0
   I_colorUpgrade: 0
   L_colorUpgrade:
   - {fileID: 2100000, guid: eaf10aac96b5b534d951fc1d3d2fa08e, type: 2}
   - {fileID: 2100000, guid: fc127e09bf6a2a242b1accb8594f701d, type: 2}
   - {fileID: 2100000, guid: 95a400d1a5fb7ac4fbf20adb8c2b04a5, type: 2}
   P_colorUpgrade: 000000000000000000000000
-  wheelUpgrade: 1
+  wheelUpgrade: 0
   I_wheelUpgrade: 0
   L_wheelUpgrade: []
   P_wheelUpgrade: 
-  handlingUpgrade: 1
+  handlingUpgrade: 0
   I_handlingUpgrade: 0
   P_handlingUpgrade: 000000007b000000f3e00100f3e00100
 --- !u!82 &8952095242928637465
@@ -6777,7 +6771,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2962088815592287996}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: bd9566abdbf08834281bfb4ea8b92a5d, type: 3}
@@ -6866,6 +6860,80 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6507669362931929437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2962088815592287996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d9170c240bbf478a95a5ac752b97c50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  engine_on:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 8c88d3ff69fe745209f4e69216b4dbcf,
+      type: 2}
+  engine_off:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: d2965539ee6514e51bae284b719b818c,
+      type: 2}
+  engine_rpm:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2ee29802c8a4340e4adaf51e7b7e00de,
+      type: 2}
+--- !u!114 &2010956465871785847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2962088815592287996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5513c1f6921984252ad4b9fc2752dc71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 1
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
+--- !u!114 &2354085271671190588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2962088815592287996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77c536b36683448789fa8383c025a693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: ae8d9d44
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: d5a93900f1f824231b41305de9eb9411,
+      type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
 --- !u!1 &3321368352880864855
 GameObject:
   m_ObjectHideFlags: 0
@@ -15129,24 +15197,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d958382a0f0100c41828f087b0bb64d7, type: 3}
---- !u!198 &7012360742526885458 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 9201846915408205124, guid: d958382a0f0100c41828f087b0bb64d7,
-    type: 3}
-  m_PrefabInstance: {fileID: 2225745739602692886}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &4258613530899688432 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 2736725691770413286, guid: d958382a0f0100c41828f087b0bb64d7,
-    type: 3}
-  m_PrefabInstance: {fileID: 2225745739602692886}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &6038015840152109202 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5559755997102820228, guid: d958382a0f0100c41828f087b0bb64d7,
-    type: 3}
-  m_PrefabInstance: {fileID: 2225745739602692886}
-  m_PrefabAsset: {fileID: 0}
 --- !u!198 &5029554605322818189 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 6570750418155592091, guid: d958382a0f0100c41828f087b0bb64d7,
@@ -15156,6 +15206,24 @@ ParticleSystem:
 --- !u!4 &6295857955930808234 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5313137607919080636, guid: d958382a0f0100c41828f087b0bb64d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2225745739602692886}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &4258613530899688432 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2736725691770413286, guid: d958382a0f0100c41828f087b0bb64d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2225745739602692886}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7012360742526885458 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 9201846915408205124, guid: d958382a0f0100c41828f087b0bb64d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2225745739602692886}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &6038015840152109202 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5559755997102820228, guid: d958382a0f0100c41828f087b0bb64d7,
     type: 3}
   m_PrefabInstance: {fileID: 2225745739602692886}
   m_PrefabAsset: {fileID: 0}

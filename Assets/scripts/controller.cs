@@ -52,9 +52,6 @@ public class controller : MonoBehaviour
     private float radius = 6, brakPower = 0, DownForceValue = 10f,wheelsRPM ,driftFactor, lastValue ,horizontal , vertical,totalPower;
     private bool flag=false;
 
-
-
-
     private void Awake() {
 
         if(SceneManager.GetActiveScene().name == "awakeScene")return;
@@ -364,5 +361,16 @@ public class controller : MonoBehaviour
         else CarEffects.stopNitrusEmitter();
 
     }
+
+    public float getEngineRpm()
+    {
+        return engineRPM;
+    }
+
+    public float getCarSpeed()
+    {
+        return KPH;
+    }
+        
 
 }
