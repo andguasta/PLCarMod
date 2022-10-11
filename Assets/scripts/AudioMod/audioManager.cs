@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class audioManager : MonoBehaviour
 {
     private controller carController;
@@ -28,7 +29,10 @@ public class audioManager : MonoBehaviour
     void Start()
     {
         carController = GameObject.FindGameObjectWithTag("Player").GetComponent<controller>();
-        engine_on.Post(this.gameObject);
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "awakeScene")
+        {
+            engine_on.Post(this.gameObject);
+        }
     }
 
     // Update is called once per frame
@@ -39,8 +43,11 @@ public class audioManager : MonoBehaviour
 
     }
 
-    private void OnApplicationQuit()
+    private void OnDestroy()
     {
-        engine_off.Post(this.gameObject);
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "awakeScene")
+        {
+            engine_off.Post(this.gameObject);
+        }
     }
 }

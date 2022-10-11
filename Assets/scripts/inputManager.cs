@@ -20,14 +20,26 @@ public class inputManager : MonoBehaviour {
     [Range(0,1)]public float acceleration = 0.5f;
     public int currentNode;
 
+    UnityEngine.Events.UnityEvent engineStartEvent;
+    UnityEngine.Events.UnityEvent engineStopEvent;
+    controller carController;
 
     private void Start() {
         waypoints = GameObject.FindGameObjectWithTag("path").GetComponent<trackWaypoints>();
         currentWaypoint = gameObject.transform;
         nodes = waypoints.nodes;
-        
+
         //print(gameObject.name + "offset distance " + distanceOffset + "steer force = " + sterrForce + "acc " + acceleration);
+
+        carController = gameObject.GetComponent<controller>();
+
+        if (engineStartEvent == null) engineStartEvent = new UnityEngine.Events.UnityEvent();
+        engineStartEvent.AddListener(carController.OnEngineStarted);
+
+        if (engineStopEvent == null) engineStopEvent = new UnityEngine.Events.UnityEvent();
+        engineStopEvent.AddListener(carController.OnEngineStopped);
     }
+
 
     private void FixedUpdate () {
 
@@ -45,6 +57,9 @@ public class inputManager : MonoBehaviour {
         handbrake = (Input.GetAxis ("Jump") != 0) ? true : false;
         if (Input.GetKey (KeyCode.LeftShift)) boosting = true;
         else boosting = false;
+
+        if (Input.GetKeyDown(KeyCode.Z)) engineStartEvent.Invoke();
+        if (Input.GetKeyDown(KeyCode.C)) engineStopEvent.Invoke();
 
     }
 

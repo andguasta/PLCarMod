@@ -52,6 +52,8 @@ public class controller : MonoBehaviour
     private float radius = 6, brakPower = 0, DownForceValue = 10f,wheelsRPM ,driftFactor, lastValue ,horizontal , vertical,totalPower;
     private bool flag=false;
 
+    private bool engineStatus = false;
+
     private void Awake() {
 
         if(SceneManager.GetActiveScene().name == "awakeScene")return;
@@ -66,16 +68,16 @@ public class controller : MonoBehaviour
 
         horizontal = IM.horizontal;
         vertical = IM.vertical;
-
         
-
         lastValue = engineRPM;
-
 
         addDownForce();
         animateWheels();
         steerVehicle();
-        calculateEnginePower();
+
+        if (engineStatus) calculateEnginePower();
+        else engineRPM = 0;
+
         if(gameObject.tag == "AI")return;
         adjustTraction();
         activateNitrus();
@@ -85,16 +87,14 @@ public class controller : MonoBehaviour
 
         wheelRPM();
 
-            if (vertical != 0 ){
-                rigidbody.drag = 0.005f; 
-            }
-            if (vertical == 0){
-                rigidbody.drag = 0.1f;
-            }
-            totalPower = 3.6f * enginePower.Evaluate(engineRPM) * (vertical);
+        if (vertical != 0 ){
+            rigidbody.drag = 0.005f; 
+        }
+        if (vertical == 0){
+            rigidbody.drag = 0.1f;
+        }
 
-        
-
+        totalPower = 3.6f * enginePower.Evaluate(engineRPM) * (vertical);
 
         float velocity  = 0.0f;
         if (engineRPM >= maxRPM || flag ){
@@ -371,6 +371,17 @@ public class controller : MonoBehaviour
     {
         return KPH;
     }
-        
+
+    public void OnEngineStarted()
+    {
+        Debug.Log("EngineStarted");
+        engineStatus = true;
+    }
+
+    public void OnEngineStopped()
+    {
+        Debug.Log("EngineStopped");
+        engineStatus = false;
+    }
 
 }
