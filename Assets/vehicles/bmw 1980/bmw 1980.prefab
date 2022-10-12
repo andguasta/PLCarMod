@@ -6608,6 +6608,15 @@ MonoBehaviour:
   boosting: 0
   acceleration: 0.5
   currentNode: 0
+  engineStartEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  engineStopEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  handbrakeEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2962088815592287997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6620,7 +6629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434cf01a841ee2344b8788c24624771d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drive: 2
+  drive: 1
   test: 0
   handBrakeFrictionMultiplier: 2
   maxRPM: 7500
@@ -6673,6 +6682,12 @@ MonoBehaviour:
   nitrusFlag: 0
   carPrice: 50000
   carName: BMW 1980
+  gearDownEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  gearUpEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7837695500219272407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6871,20 +6886,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9170c240bbf478a95a5ac752b97c50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  engine_on:
+  engineOn:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 8c88d3ff69fe745209f4e69216b4dbcf,
       type: 2}
-  engine_off:
+  engineOff:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: d2965539ee6514e51bae284b719b818c,
       type: 2}
-  engine_rpm:
+  engineRpm:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 2ee29802c8a4340e4adaf51e7b7e00de,
+      type: 2}
+  carSpeedKmh:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 24474051c8e624950af2f714c073b2f9,
+      type: 2}
+  handbrakeTriggered:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9bfad71a11ec44073bb0f6d033c5ab80,
+      type: 2}
+  gearNumber:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 80d4996e4e65e411e86ab7f9ef548c10,
+      type: 2}
+  gearUp:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 51c3d76ea678b46f8a90e4f5e0cdde06,
+      type: 2}
+  gearDown:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a982fc2326d8a4105aab8d51a33661bd,
       type: 2}
 --- !u!114 &2010956465871785847
 MonoBehaviour:

@@ -6,10 +6,21 @@ using UnityEngine;
 public class audioManager : MonoBehaviour
 {
     private controller carController;
+    private inputManager carInputManager;
 
-    public AK.Wwise.Event engine_on;
-    public AK.Wwise.Event engine_off;
-    public AK.Wwise.RTPC engine_rpm;
+    [SerializeField] private AK.Wwise.Event engineOn;
+    [SerializeField] private AK.Wwise.Event engineOff;
+
+    [SerializeField] private AK.Wwise.RTPC engineRpm;
+    [SerializeField] private AK.Wwise.RTPC carSpeedKmh;
+
+    [SerializeField] private AK.Wwise.Event handbrakeTriggered;
+
+    [Header("Gears")]
+    [SerializeField] private AK.Wwise.RTPC gearNumber;
+    [SerializeField] private AK.Wwise.Event gearUp;
+    [SerializeField] private AK.Wwise.Event gearDown;
+
 
     //public AK.Wwise.Event startSmoke;
     //public AK.Wwise.Event stopSmoke;
@@ -17,37 +28,64 @@ public class audioManager : MonoBehaviour
     //public AK.Wwise.Event handbrake_on;
 
 
-    //public AK.Wwise.RTPC carSpeed_kmh;
-
-    //public AK.Wwise.RTPC gear_number;
-    //public AK.Wwise.Event gearUp;
-    //public AK.Wwise.Event gearDown;
-
     //public AK.Wwise.RTPC nitro;
 
 
     void Start()
     {
-        carController = GameObject.FindGameObjectWithTag("Player").GetComponent<controller>();
-        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "awakeScene")
-        {
-            engine_on.Post(this.gameObject);
-        }
+        carController = this.gameObject.GetComponent<controller>();
+        carInputManager = this.gameObject.GetComponent<inputManager>();
+
+        //if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "awakeScene")
+        //{
+        //    engineOn.Post(this.gameObject);
+        //}
+
+        carController.gearUpEvent.AddListener(OnGearUp);
+        carController.gearDownEvent.AddListener(OnGearDown);
+        carInputManager.handbrakeEvent.AddListener(OnHandbrakeStart);
+        carInputManager.engineStartEvent.AddListener(OnEngineStart);
+        carInputManager.engineStopEvent.AddListener(OnEngineStop);
     }
-
-    // Update is called once per frame
+ 
     void Update()
-    {
-        //Debug.Log(carController.getEngineRpm());
-        engine_rpm.SetValue(this.gameObject, carController.getEngineRpm());
-
+    {       
+        engineRpm.SetValue(this.gameObject, carController.getEngineRpm());
+        carSpeedKmh.SetValue(this.gameObject, carController.getCarSpeed());
+        gearNumber.SetValue(this.gameObject, carController.getGearNum());
     }
 
     private void OnDestroy()
     {
         if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "awakeScene")
         {
-            engine_off.Post(this.gameObject);
+            engineOff.Post(this.gameObject);
         }
+    }
+
+    public void OnEngineStart()
+    {
+        engineOn.Post(this.gameObject);
+    }
+
+    public void OnEngineStop()
+    {
+        engineOff.Post(this.gameObject);
+    }
+
+    public void OnGearUp()
+    {
+        gearUp.Post(this.gameObject);
+    }
+
+    public void OnGearDown()
+    {
+        Debug.Log("OnGearDown");
+        gearDown.Post(this.gameObject);
+    }
+
+    public void OnHandbrakeStart()
+    {
+        handbrakeTriggered.Post(this.gameObject);
     }
 }

@@ -20,9 +20,18 @@ public class inputManager : MonoBehaviour {
     [Range(0,1)]public float acceleration = 0.5f;
     public int currentNode;
 
-    UnityEngine.Events.UnityEvent engineStartEvent;
-    UnityEngine.Events.UnityEvent engineStopEvent;
-    controller carController;
+
+    //controller carController;
+    [HideInInspector] public UnityEngine.Events.UnityEvent engineStartEvent;
+    [HideInInspector] public UnityEngine.Events.UnityEvent engineStopEvent;
+    [HideInInspector] public UnityEngine.Events.UnityEvent handbrakeEvent;
+
+    private void Awake()
+    {
+        if (engineStartEvent == null) engineStartEvent = new UnityEngine.Events.UnityEvent();
+        if (engineStopEvent == null) engineStopEvent = new UnityEngine.Events.UnityEvent();
+        if (handbrakeEvent == null) handbrakeEvent = new UnityEngine.Events.UnityEvent();
+    }
 
     private void Start() {
         waypoints = GameObject.FindGameObjectWithTag("path").GetComponent<trackWaypoints>();
@@ -30,14 +39,10 @@ public class inputManager : MonoBehaviour {
         nodes = waypoints.nodes;
 
         //print(gameObject.name + "offset distance " + distanceOffset + "steer force = " + sterrForce + "acc " + acceleration);
+        
 
-        carController = gameObject.GetComponent<controller>();
-
-        if (engineStartEvent == null) engineStartEvent = new UnityEngine.Events.UnityEvent();
-        engineStartEvent.AddListener(carController.OnEngineStarted);
-
-        if (engineStopEvent == null) engineStopEvent = new UnityEngine.Events.UnityEvent();
-        engineStopEvent.AddListener(carController.OnEngineStopped);
+        
+        
     }
 
 
@@ -60,6 +65,8 @@ public class inputManager : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Z)) engineStartEvent.Invoke();
         if (Input.GetKeyDown(KeyCode.C)) engineStopEvent.Invoke();
+
+        if (Input.GetButtonDown("Jump")) handbrakeEvent.Invoke();
 
     }
 
@@ -87,9 +94,7 @@ public class inputManager : MonoBehaviour {
                 }
                 currentNode = i;
             }
-            
-        }
-        
+        }    
     }
 
     private void AISteer () {
@@ -98,7 +103,5 @@ public class inputManager : MonoBehaviour {
         relative /= relative.magnitude;
 
         horizontal = (relative.x / relative.magnitude) * sterrForce;
-
     }
-
 }

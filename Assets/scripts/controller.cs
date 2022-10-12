@@ -27,7 +27,7 @@ public class controller : MonoBehaviour
     public AnimationCurve enginePower;
 
 
-    [HideInInspector]public int gearNum = 1;
+    [HideInInspector]public int gearNum;
     [HideInInspector]public bool playPauseSmoke = false,hasFinished;
     [HideInInspector]public float KPH;
     [HideInInspector]public float engineRPM;
@@ -53,6 +53,8 @@ public class controller : MonoBehaviour
     private bool flag=false;
 
     private bool engineStatus = false;
+     public UnityEngine.Events.UnityEvent gearDownEvent;
+    [HideInInspector] public UnityEngine.Events.UnityEvent gearUpEvent;
 
     private void Awake() {
 
@@ -60,6 +62,15 @@ public class controller : MonoBehaviour
         getObjects();
         StartCoroutine(timedLoop());
 
+        if (gearDownEvent == null) gearDownEvent = new UnityEngine.Events.UnityEvent();
+        if (gearUpEvent == null) gearUpEvent = new UnityEngine.Events.UnityEvent();
+    }
+
+    private void Start()
+    {
+        IM.engineStartEvent.AddListener(OnEngineStarted);
+        IM.engineStopEvent.AddListener(OnEngineStopped);
+        gearNum = 0;
     }
 
     private void Update() {
@@ -109,7 +120,9 @@ public class controller : MonoBehaviour
         }
         if (engineRPM >= maxRPM + 1000) engineRPM = maxRPM + 1000; // clamp at max
         moveVehicle();
-    shifter();
+        //Debug.Log("PreShift: " + gearNum);
+        shifter();
+        //Debug.Log("PostShift: " + gearNum);
     }
 
     private void wheelRPM(){
@@ -143,11 +156,14 @@ public class controller : MonoBehaviour
             //automatic
         if(engineRPM > maxRPM && gearNum < gears.Length-1 && !reverse && checkGears() ){
             gearNum ++;
+            gearUpEvent.Invoke();
             if(gameObject.tag != "AI") manager.changeGear();
             return;
         }
         if(engineRPM < minRPM && gearNum > 0){
             gearNum --;
+            Debug.Log("Gear Down: " + gearNum);
+            gearDownEvent.Invoke();
             if (gameObject.tag != "AI") manager.changeGear();
         }
 
@@ -370,6 +386,11 @@ public class controller : MonoBehaviour
     public float getCarSpeed()
     {
         return KPH;
+    }
+
+    public int getGearNum()
+    {
+        return gearNum;
     }
 
     public void OnEngineStarted()
