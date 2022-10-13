@@ -44,7 +44,7 @@ public class controller : MonoBehaviour
 
     //car Shop Values
     public int carPrice ;
-    public string carName;
+    public string carName ;
     private float smoothTime = 0.09f;
 
 
@@ -53,8 +53,10 @@ public class controller : MonoBehaviour
     private bool flag=false;
 
     private bool engineStatus = false;
-     public UnityEngine.Events.UnityEvent gearDownEvent;
+    [HideInInspector] public UnityEngine.Events.UnityEvent gearDownEvent;
     [HideInInspector] public UnityEngine.Events.UnityEvent gearUpEvent;
+    [HideInInspector] public UnityEngine.Events.UnityEvent skidStartEvent;
+    [HideInInspector] public UnityEngine.Events.UnityEvent skidStopEvent;
 
     private void Awake() {
 
@@ -64,6 +66,8 @@ public class controller : MonoBehaviour
 
         if (gearDownEvent == null) gearDownEvent = new UnityEngine.Events.UnityEvent();
         if (gearUpEvent == null) gearUpEvent = new UnityEngine.Events.UnityEvent();
+        if (skidStartEvent == null) skidStartEvent = new UnityEngine.Events.UnityEvent();
+        if (skidStopEvent == null) skidStopEvent = new UnityEngine.Events.UnityEvent();
     }
 
     private void Start()
@@ -86,8 +90,16 @@ public class controller : MonoBehaviour
         animateWheels();
         steerVehicle();
 
-        if (engineStatus) calculateEnginePower();
-        else engineRPM = 0;
+        if (gameObject.tag == "Player")
+        {
+            if (engineStatus) calculateEnginePower();
+            else engineRPM = 0;
+        }
+        else
+        {
+            engineStatus = true;
+        }
+        
 
         if(gameObject.tag == "AI")return;
         adjustTraction();
@@ -161,8 +173,7 @@ public class controller : MonoBehaviour
             return;
         }
         if(engineRPM < minRPM && gearNum > 0){
-            gearNum --;
-            Debug.Log("Gear Down: " + gearNum);
+            gearNum --;         
             gearDownEvent.Invoke();
             if (gameObject.tag != "AI") manager.changeGear();
         }
@@ -337,11 +348,17 @@ public class controller : MonoBehaviour
             WheelHit wheelHit;
 
             wheels[i].GetGroundHit(out wheelHit);
-                //smoke
-            if(wheelHit.sidewaysSlip >= 0.3f || wheelHit.sidewaysSlip <= -0.3f ||wheelHit.forwardSlip >= .3f || wheelHit.forwardSlip <= -0.3f)
+            //smoke
+            if (wheelHit.sidewaysSlip >= 0.3f || wheelHit.sidewaysSlip <= -0.3f || wheelHit.forwardSlip >= .3f || wheelHit.forwardSlip <= -0.3f)
+            {
                 playPauseSmoke = true;
+                skidStartEvent.Invoke();
+            }
             else
+            {
                 playPauseSmoke = false;
+                //skidStopEvent.Invoke();
+            }
                         
 
 			if(wheelHit.sidewaysSlip < 0 )	driftFactor = (1 + -IM.horizontal) * Mathf.Abs(wheelHit.sidewaysSlip) ;
@@ -378,20 +395,13 @@ public class controller : MonoBehaviour
 
     }
 
-    public float getEngineRpm()
-    {
-        return engineRPM;
-    }
+    public float getEngineRpm() { return engineRPM; }
 
-    public float getCarSpeed()
-    {
-        return KPH;
-    }
+    public float getCarSpeed() { return KPH; }
 
-    public int getGearNum()
-    {
-        return gearNum;
-    }
+    public int getGearNum() { return gearNum; }
+
+    public string getCarName() { return carName; }
 
     public void OnEngineStarted()
     {

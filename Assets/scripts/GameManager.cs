@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour {
         Instantiate (list.vehicles[PlayerPrefs.GetInt ("pointer")], startPosition.transform.position, startPosition.transform.rotation);
         RR = GameObject.FindGameObjectWithTag ("Player").GetComponent<controller> ();
 
-        presentGameObjectVehicles = GameObject.FindGameObjectsWithTag ("ai");
+        presentGameObjectVehicles = GameObject.FindGameObjectsWithTag ("AI");
 
         presentVehicles = new List<vehicle> ();
         foreach (GameObject R in presentGameObjectVehicles)

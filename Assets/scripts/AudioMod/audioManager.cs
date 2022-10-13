@@ -6,7 +6,7 @@ using UnityEngine;
 public class audioManager : MonoBehaviour
 {
     private controller carController;
-    private inputManager carInputManager;
+    private inputManager carInputManager;    
 
     [SerializeField] private AK.Wwise.Event engineOn;
     [SerializeField] private AK.Wwise.Event engineOff;
@@ -15,18 +15,22 @@ public class audioManager : MonoBehaviour
     [SerializeField] private AK.Wwise.RTPC carSpeedKmh;
 
     [SerializeField] private AK.Wwise.Event handbrakeTriggered;
+    [SerializeField] private AK.Wwise.Event skidStart;
+    [SerializeField] private AK.Wwise.Event skidStop;
 
     [Header("Gears")]
     [SerializeField] private AK.Wwise.RTPC gearNumber;
     [SerializeField] private AK.Wwise.Event gearUp;
     [SerializeField] private AK.Wwise.Event gearDown;
 
+    [Header("IntegrationParameters")]
+    [SerializeField] private float skidResponse;
+
+    private bool isSkidding;
+    private float skidTime = 0.0f;
 
     //public AK.Wwise.Event startSmoke;
     //public AK.Wwise.Event stopSmoke;
-
-    //public AK.Wwise.Event handbrake_on;
-
 
     //public AK.Wwise.RTPC nitro;
 
@@ -35,7 +39,7 @@ public class audioManager : MonoBehaviour
     {
         carController = this.gameObject.GetComponent<controller>();
         carInputManager = this.gameObject.GetComponent<inputManager>();
-
+        
         //if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "awakeScene")
         //{
         //    engineOn.Post(this.gameObject);
@@ -46,6 +50,20 @@ public class audioManager : MonoBehaviour
         carInputManager.handbrakeEvent.AddListener(OnHandbrakeStart);
         carInputManager.engineStartEvent.AddListener(OnEngineStart);
         carInputManager.engineStopEvent.AddListener(OnEngineStop);
+
+        carController.skidStartEvent.AddListener(OnSkidStart);
+        carController.skidStartEvent.AddListener(OnSkidStop);
+
+        isSkidding = false;
+
+        carSwitchSet(carController.getCarName());
+    }
+
+    void carSwitchSet(string carName)
+    {
+        string formattedName = carName.Replace(' ', '_');
+        Debug.Log(formattedName);
+        AkSoundEngine.SetSwitch("Car_Name", formattedName, this.gameObject);
     }
  
     void Update()
@@ -53,6 +71,35 @@ public class audioManager : MonoBehaviour
         engineRpm.SetValue(this.gameObject, carController.getEngineRpm());
         carSpeedKmh.SetValue(this.gameObject, carController.getCarSpeed());
         gearNumber.SetValue(this.gameObject, carController.getGearNum());
+
+
+        if(isSkidding) checkSkid();
+
+    }
+
+    private void checkSkid()
+    {
+        skidTime += Time.deltaTime;
+        if (skidTime > skidResponse)
+        {
+            skidStop.Post(this.gameObject);           
+            isSkidding = false;
+            skidTime = 0.0f;
+        }
+    }
+
+    public void OnSkidStart()
+    {
+        //Debug.Log("OnSkidStart");
+        if (!isSkidding)
+        {
+            skidStart.Post(this.gameObject);            
+            isSkidding = true;
+        }
+        else
+        {
+            skidTime = 0.0f;
+        }
     }
 
     private void OnDestroy()
@@ -60,6 +107,10 @@ public class audioManager : MonoBehaviour
         if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "awakeScene")
         {
             engineOff.Post(this.gameObject);
+        }
+        if (isSkidding)
+        {
+            skidStop.Post(this.gameObject);
         }
     }
 
@@ -80,12 +131,17 @@ public class audioManager : MonoBehaviour
 
     public void OnGearDown()
     {
-        Debug.Log("OnGearDown");
+        //Debug.Log("OnGearDown");
         gearDown.Post(this.gameObject);
     }
 
     public void OnHandbrakeStart()
     {
         handbrakeTriggered.Post(this.gameObject);
+    }
+   
+    public void OnSkidStop()
+    {
+        
     }
 }

@@ -6688,6 +6688,12 @@ MonoBehaviour:
   gearUpEvent:
     m_PersistentCalls:
       m_Calls: []
+  skidStartEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  skidStopEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7837695500219272407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6911,6 +6917,16 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 9bfad71a11ec44073bb0f6d033c5ab80,
       type: 2}
+  skidStart:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: fccf9355b8e1d4177a8ed844a0c55e1b,
+      type: 2}
+  skidStop:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2f8f3d1f89e454b0684c2fee49814eee,
+      type: 2}
   gearNumber:
     idInternal: 0
     valueGuidInternal: 
@@ -6926,6 +6942,7 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: a982fc2326d8a4105aab8d51a33661bd,
       type: 2}
+  skidResponse: 0.3
 --- !u!114 &2010956465871785847
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ public class carEffects : MonoBehaviour
     private inputManager IM;
     private bool smokeFlag  = false , lightsFlag = false , tireMarksFlag;
 
+
     //do lights in here 
     private void Start() {
         if(gameObject.tag == "AI")return;
@@ -46,6 +47,7 @@ public class carEffects : MonoBehaviour
 
     public void startSmoke(){
         if(smokeFlag)return;
+        
         for (int i = 0; i < smoke.Length; i++){
             var emission = smoke[i].emission;
             emission.rateOverTime = ((int) controller.KPH *2 >= 2000) ? (int) controller.KPH * 2 : 2000;
@@ -57,6 +59,7 @@ public class carEffects : MonoBehaviour
 
     public void stopSmoke(){
         if(!smokeFlag) return;
+        
         for (int i = 0; i < smoke.Length; i++){
             smoke[i].Stop();
         }
@@ -115,6 +118,7 @@ public class carEffects : MonoBehaviour
             T.emitting = true;
         }
         skidClip.Play();
+        
         tireMarksFlag = true;
     }   
     private void stopEmitter() {
@@ -124,6 +128,7 @@ public class carEffects : MonoBehaviour
             T.emitting = false;
         }
         skidClip.Stop();
+        
         tireMarksFlag = false;
     }
 
