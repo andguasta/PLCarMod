@@ -11558,6 +11558,11 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 2ee29802c8a4340e4adaf51e7b7e00de,
       type: 2}
+  engineRpmScaled:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 734cb170f815d4617b3add617d256b5b,
+      type: 2}
   carSpeedKmh:
     idInternal: 0
     valueGuidInternal: 

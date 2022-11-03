@@ -12,7 +12,9 @@ public class audioManager : MonoBehaviour
     [SerializeField] private AK.Wwise.Event engineOff;
 
     [SerializeField] private AK.Wwise.RTPC engineRpm;
+    [SerializeField] private AK.Wwise.RTPC engineRpmScaled;
     [SerializeField] private AK.Wwise.RTPC carSpeedKmh;
+    
 
     [SerializeField] private AK.Wwise.Event handbrakeTriggered;
     [SerializeField] private AK.Wwise.Event skidStart;
@@ -69,6 +71,9 @@ public class audioManager : MonoBehaviour
     void Update()
     {       
         engineRpm.SetValue(this.gameObject, carController.getEngineRpm());
+        Debug.Log("NOTScaled: " + engineRpm.GetValue(gameObject));
+        Debug.Log("SCALED: " + engineRpmScaled.GetValue(gameObject));
+        engineRpmScaled.SetValue(this.gameObject, scaleRpm(carController.getEngineRpm()));
         carSpeedKmh.SetValue(this.gameObject, carController.getCarSpeed());
         gearNumber.SetValue(this.gameObject, carController.getGearNum());
 
@@ -86,6 +91,13 @@ public class audioManager : MonoBehaviour
             isSkidding = false;
             skidTime = 0.0f;
         }
+    }
+
+    //This function scales the rpm to a more manageable range
+    //at the moment it's a dirty solution 
+    private float scaleRpm(float inputRpm)
+    {
+        return (inputRpm < 1200) ? inputRpm : (float)(inputRpm * 0.75);  
     }
 
     public void OnSkidStart()
