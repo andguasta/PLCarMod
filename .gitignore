@@ -3,8 +3,10 @@
 .vsconfig
 CarGameMod_DefaultProject/
 Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset*
+Assets/Wwise/Deployment/Plugins/
 WwiseUnityIntegration_*_Src.zip
 Assets/StreamingAssets/Audio/GeneratedSoundBanks/
+
 
 
 # This .gitignore file should be placed at the root of your Unity project directory
