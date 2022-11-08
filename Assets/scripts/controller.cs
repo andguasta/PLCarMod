@@ -82,7 +82,8 @@ public class controller : MonoBehaviour
         if(SceneManager.GetActiveScene().name == "awakeScene")return;
 
         horizontal = IM.horizontal;
-        vertical = IM.vertical;
+        // dirty fix for avoiding accelaration during handbrake
+        vertical = IM.handbrake ? 0 : IM.vertical;
         
         lastValue = engineRPM;
 

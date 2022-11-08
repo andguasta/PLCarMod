@@ -1725,6 +1725,15 @@ MonoBehaviour:
   boosting: 0
   acceleration: 0.5
   currentNode: 0
+  engineStartEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  engineStopEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  handbrakeEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2201421293988407868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1799,6 +1808,18 @@ MonoBehaviour:
   nitrusFlag: 0
   carPrice: 2500000
   carName: Bugatti Chiron
+  gearDownEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  gearUpEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  skidStartEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  skidStopEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2201421293988407809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1878,7 +1899,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2201421293988407869}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8506b170d97c4b747ab52f9cc756a65b, type: 3}
   m_Name: 
@@ -1904,7 +1925,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2201421293988407869}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: bd9566abdbf08834281bfb4ea8b92a5d, type: 3}
@@ -2005,6 +2026,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9170c240bbf478a95a5ac752b97c50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  engineOn:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 8c88d3ff69fe745209f4e69216b4dbcf,
+      type: 2}
+  engineOff:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: d2965539ee6514e51bae284b719b818c,
+      type: 2}
+  engineRpm:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2ee29802c8a4340e4adaf51e7b7e00de,
+      type: 2}
+  engineRpmScaled:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 734cb170f815d4617b3add617d256b5b,
+      type: 2}
+  carSpeedKmh:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 24474051c8e624950af2f714c073b2f9,
+      type: 2}
+  handbrakeTriggered:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9bfad71a11ec44073bb0f6d033c5ab80,
+      type: 2}
+  skidStart:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: fccf9355b8e1d4177a8ed844a0c55e1b,
+      type: 2}
+  skidStop:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2f8f3d1f89e454b0684c2fee49814eee,
+      type: 2}
+  gearNumber:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 80d4996e4e65e411e86ab7f9ef548c10,
+      type: 2}
+  gearUp:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 51c3d76ea678b46f8a90e4f5e0cdde06,
+      type: 2}
+  gearDown:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a982fc2326d8a4105aab8d51a33661bd,
+      type: 2}
+  skidResponse: 0.3
 --- !u!1 &2203677432378536844
 GameObject:
   m_ObjectHideFlags: 0

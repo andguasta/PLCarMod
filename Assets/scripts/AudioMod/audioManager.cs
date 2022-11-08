@@ -71,8 +71,8 @@ public class audioManager : MonoBehaviour
     void Update()
     {       
         engineRpm.SetValue(this.gameObject, carController.getEngineRpm());
-        Debug.Log("NOTScaled: " + engineRpm.GetValue(gameObject));
-        Debug.Log("SCALED: " + engineRpmScaled.GetValue(gameObject));
+        //Debug.Log("NOTScaled: " + engineRpm.GetValue(gameObject));
+        //Debug.Log("SCALED: " + engineRpmScaled.GetValue(gameObject));
         engineRpmScaled.SetValue(this.gameObject, scaleRpm(carController.getEngineRpm()));
         carSpeedKmh.SetValue(this.gameObject, carController.getCarSpeed());
         gearNumber.SetValue(this.gameObject, carController.getGearNum());

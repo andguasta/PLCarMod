@@ -1,0 +1,8 @@
+Change log:
+Version 0.1.2
+- Fixed a bug on the handbrake: with acceleration and the handbrake pressed the car was accelerating very fast. Thanks to Roberto Berrone for reporting this bug.
+- Force Windowed on Launch
+- Added some text on the UI
+- Added Switch to all cars: Bugatti_Chiron, AstonMartin_DB11, Porsche_Cayman, BMW_1980
+- Fixed some problems with the inputManager that was updating the buttons during the wrong update cycle causing double triggers
+- Set default quality to medium

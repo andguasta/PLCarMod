@@ -45,15 +45,17 @@ public class inputManager : MonoBehaviour {
         
     }
 
+    private void Update()
+    {
+        keyboard();
+    }
 
     private void FixedUpdate () {
 
         if (gameObject.tag == "AI") AIDrive ();
         else if (gameObject.tag == "Player"){
             calculateDistanceOfWaypoints();
-            keyboard ();
         } 
-
     }
 
     private void keyboard () {
@@ -63,8 +65,10 @@ public class inputManager : MonoBehaviour {
         if (Input.GetKey (KeyCode.LeftShift)) boosting = true;
         else boosting = false;
 
-        if (Input.GetKeyDown(KeyCode.Z)) engineStartEvent.Invoke();
-        if (Input.GetKeyDown(KeyCode.C)) engineStopEvent.Invoke();
+        if (Input.GetKeyDown(KeyCode.Z))
+            { engineStartEvent.Invoke();}
+        if (Input.GetKeyDown(KeyCode.C))
+            { engineStopEvent.Invoke();}
 
         if (Input.GetButtonDown("Jump")) handbrakeEvent.Invoke();
 
