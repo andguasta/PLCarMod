@@ -72,9 +72,19 @@ public class controller : MonoBehaviour
 
     private void Start()
     {
-        IM.engineStartEvent.AddListener(OnEngineStarted);
-        IM.engineStopEvent.AddListener(OnEngineStopped);
-        gearNum = 0;
+        if (SceneManager.GetActiveScene().name != "awakeScene")
+        {
+            if (IM.engineStartEvent != null)
+            {
+                IM.engineStartEvent.AddListener(OnEngineStarted);
+            }
+            if (IM.engineStopEvent != null)
+            {
+                IM.engineStopEvent.AddListener(OnEngineStopped);
+            }
+            gearNum = 0;
+        }
+
     }
 
     private void Update() {

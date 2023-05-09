@@ -38,11 +38,7 @@ public class inputManager : MonoBehaviour {
         currentWaypoint = gameObject.transform;
         nodes = waypoints.nodes;
 
-        //print(gameObject.name + "offset distance " + distanceOffset + "steer force = " + sterrForce + "acc " + acceleration);
-        
-
-        
-        
+        //print(gameObject.name + "offset distance " + distanceOffset + "steer force = " + sterrForce + "acc " + acceleration);  
     }
 
     private void Update()

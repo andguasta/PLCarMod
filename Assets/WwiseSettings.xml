@@ -9,5 +9,5 @@
   <SoundbankPath>Audio/GeneratedSoundBanks</SoundbankPath>
   <WwiseInstallationPathMac>/Applications/Audiokinetic/Wwise 2019.1.11.7296/Wwise.app</WwiseInstallationPathMac>
   <WwiseInstallationPathWindows />
-  <WwiseProjectPath>../../PabloLabCarMod/CarGameMod_DefaultProject/CarGameMod_DefaultProject.wproj</WwiseProjectPath>
+  <WwiseProjectPath>../CarGameMod_DefaultProject/CarGameMod_DefaultProject.wproj</WwiseProjectPath>
 </WwiseSettings>
