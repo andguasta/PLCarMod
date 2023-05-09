@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{0248E7DE-853D-4C94-9AB2-14C675F57B76}" SchemaVersion="94">
+	<Switches>
+		<WorkUnit Name="Default Work Unit" ID="{0248E7DE-853D-4C94-9AB2-14C675F57B76}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="car_name" ID="{3B317974-B53C-4C5F-8F0F-F4F56A077418}">
+					<ChildrenList>
+						<Switch Name="bmw_1980" ID="{C00E9EC4-CA5B-4592-B91F-BD36FAD4033E}"/>
+						<Switch Name="porsche_cayman" ID="{30E5E2A0-2D20-4201-A760-2ADF61A4A5B0}"/>
+					</ChildrenList>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
+	</Switches>
+</WwiseDocument>

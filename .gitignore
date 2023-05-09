@@ -1,13 +1,23 @@
-#Project Specific
+# ----- Project Specific
 .DS_Store
 .vsconfig
-CarGameMod_DefaultProject/
 Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset*
-Assets/Wwise/Deployment/Plugins/
 WwiseUnityIntegration_*_Src.zip
 Assets/StreamingAssets/Audio/GeneratedSoundBanks/
+CarGameMod_DefaultProject/Originals/
+#Assets/Wwise/Deployment/Plugins/
 
+# ----- Wwise
+*.prof
+*.akd
+*.validationcache
+GeneratedSoundBanks
+.cache
+.backup
+*.crossover.wsettings
+AutoDetectedSampleRates.cache
 
+# ----- Unity
 
 # This .gitignore file should be placed at the root of your Unity project directory
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore

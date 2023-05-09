@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{E79B0C34-8971-4778-B1BE-74349B0CF7D4}" SchemaVersion="94">
+	<GameParameters>
+		<WorkUnit Name="Default Work Unit" ID="{E79B0C34-8971-4778-B1BE-74349B0CF7D4}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="engineRPM" ID="{5C7F6CB4-439D-4451-A2C9-CD0E1BA56721}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="900"/>
+						<Property Name="Max" Type="Real64" Value="8000"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="carSpeed" ID="{6DA0BEC5-086B-40A6-8239-2B71C4859DC5}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="350"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="gearNumber" ID="{CDB42227-5D15-4BE9-93BD-BBD5E75C924C}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="7"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="engineRPMScaled" ID="{C07E81F7-AE88-4B96-B0D1-5877D5FBBC8C}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="1000"/>
+						<Property Name="Max" Type="Real64" Value="7000"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
+	</GameParameters>
+</WwiseDocument>

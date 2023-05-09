@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{F8CDFDA6-6C70-4F0E-B95C-029ABFADE1FA}" SchemaVersion="94">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{F8CDFDA6-6C70-4F0E-B95C-029ABFADE1FA}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="Vehicle, Car, Ford, Transit, 07, 4C, Driving, Steady, 1750 Rpm, Exterior, Engine Perspective SND48131" ID="{3C4284F1-36B0-448A-A38E-0952BE226069}" ShortID="113185822">
+					<PropertyList>
+						<Property Name="Highpass" Type="int16">
+							<RTPCList>
+								<RTPC Name="" ID="{EFF7CCA4-E8C1-416E-AA14-6D09E64364C1}" ShortID="178682203">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="gearNumber" ID="{CDB42227-5D15-4BE9-93BD-BBD5E75C924C}" WorkUnitID="{E79B0C34-8971-4778-B1BE-74349B0CF7D4}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{B1189701-9436-4587-883A-1606C3B9DB4D}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="65537"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>20</YPos>
+												<Flags>5</Flags>
+											</Point>
+											<Point>
+												<XPos>6.0081</XPos>
+												<YPos>1</YPos>
+												<Flags>0</Flags>
+											</Point>
+											<Point>
+												<XPos>7</XPos>
+												<YPos>0</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+							</RTPCList>
+						</Property>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Lowpass" Type="int16">
+							<RTPCList>
+								<RTPC Name="" ID="{05C2C98A-007A-464C-82B0-FF8805C762D2}" ShortID="823554813">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="gearNumber" ID="{CDB42227-5D15-4BE9-93BD-BBD5E75C924C}" WorkUnitID="{E79B0C34-8971-4778-B1BE-74349B0CF7D4}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{0108CC67-203C-4D4F-A704-56BF6CDBCE81}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="65537"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>20</YPos>
+												<Flags>5</Flags>
+											</Point>
+											<Point>
+												<XPos>6.0081</XPos>
+												<YPos>1</YPos>
+												<Flags>0</Flags>
+											</Point>
+											<Point>
+												<XPos>7</XPos>
+												<YPos>0</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+								<RTPC Name="" ID="{622A16B5-AF5C-496A-8F99-3E5BFAA7094A}" ShortID="547648165">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="carSpeed" ID="{6DA0BEC5-086B-40A6-8239-2B71C4859DC5}" WorkUnitID="{E79B0C34-8971-4778-B1BE-74349B0CF7D4}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{1B2863FC-9B12-4943-856E-9B698D892D5F}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="65537"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>0</YPos>
+												<Flags>5</Flags>
+											</Point>
+											<Point>
+												<XPos>350</XPos>
+												<YPos>26</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+							</RTPCList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<RTPCList>
+								<RTPC Name="" ID="{B751578A-9E13-4A88-9A86-6656364B4C62}" ShortID="368924199">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="engineRPM" ID="{5C7F6CB4-439D-4451-A2C9-CD0E1BA56721}" WorkUnitID="{E79B0C34-8971-4778-B1BE-74349B0CF7D4}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{4701677E-9E2B-4871-ACD6-5A2F8C354A22}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="65537"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>0</YPos>
+												<Flags>5</Flags>
+											</Point>
+											<Point>
+												<XPos>8000</XPos>
+												<YPos>1775</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+							</RTPCList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<RTPCList>
+								<RTPC Name="" ID="{B47634D0-88B0-4864-9D45-27629F2B46CE}" ShortID="800232468">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="gearNumber" ID="{CDB42227-5D15-4BE9-93BD-BBD5E75C924C}" WorkUnitID="{E79B0C34-8971-4778-B1BE-74349B0CF7D4}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{D6913920-1806-4551-89AB-79ECCE3E56F9}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="3"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>-6</YPos>
+												<Flags>5</Flags>
+											</Point>
+											<Point>
+												<XPos>5.99674</XPos>
+												<YPos>0.03344</YPos>
+												<Flags>0</Flags>
+											</Point>
+											<Point>
+												<XPos>7</XPos>
+												<YPos>0</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+							</RTPCList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8F20EE18-0FAF-4C6D-8007-787CBE3196D2}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{73912312-EC0E-48D2-9114-8191A53581ED}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Vehicle, Car, Ford, Transit, 07, 4C, Driving, Steady, 1750 Rpm, Exterior, Engine Perspective SND48131" ID="{3ACE8BA9-93D1-41F7-8F71-B470D506A55E}" ShortID="904017019">
+							<PropertyList>
+								<Property Name="CrossfadeDuration" Type="Real64" Value="300"/>
+								<Property Name="LoopBegin" Type="Real64" Value="57.5866886495644"/>
+								<Property Name="LoopEnd" Type="Real64" Value="96.9497416505324"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="52.0467034123911"/>
+								<Property Name="TrimEnd" Type="Real64" Value="107.300766698935"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Vehicle, Car, Ford, Transit, 07, 4C, Driving, Steady, 1750 Rpm, Exterior, Engine Perspective SND48131.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Vehicle, Car, Ford, Transit, 07, 4C, Driving, Steady, 1750 Rpm, Exterior, Engine Perspective SND48131" ID="{3ACE8BA9-93D1-41F7-8F71-B470D506A55E}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

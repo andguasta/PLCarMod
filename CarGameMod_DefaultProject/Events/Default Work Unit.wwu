@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{1BB8777F-7CF4-4AE8-842F-088CA30C0212}" SchemaVersion="94">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{1BB8777F-7CF4-4AE8-842F-088CA30C0212}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="engine_on" ID="{89E86BCC-F01C-4B30-8F0D-19EDC15448F7}">
+					<ChildrenList>
+						<Action Name="" ID="{22192DEE-9705-4DD9-9498-F3D4710C9717}" ShortID="119124924">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Vehicle, Car, Ford, Transit, 07, 4C, Driving, Steady, 1750 Rpm, Exterior, Engine Perspective SND48131" ID="{3C4284F1-36B0-448A-A38E-0952BE226069}" WorkUnitID="{F8CDFDA6-6C70-4F0E-B95C-029ABFADE1FA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="engine_off" ID="{B72D5FD3-1506-4DDF-919B-E0C22A2308E6}">
+					<ChildrenList>
+						<Action Name="" ID="{6041F6AE-F554-45DA-B325-2BE12BF4B245}" ShortID="464394233">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Vehicle, Car, Ford, Transit, 07, 4C, Driving, Steady, 1750 Rpm, Exterior, Engine Perspective SND48131" ID="{3C4284F1-36B0-448A-A38E-0952BE226069}" WorkUnitID="{F8CDFDA6-6C70-4F0E-B95C-029ABFADE1FA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="gear_down" ID="{550FE0BA-A2BF-4515-AFFB-E671D4349CA5}"/>
+				<Event Name="gear_up" ID="{67F82EAC-A457-48E8-92D0-A47C90BB7F9B}"/>
+				<Event Name="handbrake" ID="{123F6FD1-2672-4E16-8B78-623496DFF662}"/>
+				<Event Name="skid_start" ID="{775B566D-7F27-430E-AECA-A1426AF06458}"/>
+				<Event Name="skid_stop" ID="{38A9AAC3-9B19-4E7E-B189-AF3D7E621500}"/>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
