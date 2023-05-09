@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dac4ceaafe2154f7090c34d48540529f, type: 3}
+  m_Name: C07E81F7-AE88-4B96-B0D1-5877D5FBBC8C
+  m_EditorClassIdentifier: 
+  objectName: engineRPMScaled
+  id: 1332669724
+  guid: C07E81F7-AE88-4B96-B0D1-5877D5FBBC8C
